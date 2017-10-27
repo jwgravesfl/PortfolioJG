@@ -11,9 +11,8 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import Page1 from './Page1';
 import Page2 from './Page2';
 import Page3 from './Page3';
-import AccountsWrapper from './AccountsWrapper';
-import Menu from './Menu';
-import DrawerUndockedExample from './Navbar';
+import ListExampleSimple from './Navbar';
+import SocialMenu from './Menu.jsx';
 
 const buttonStyle = {
   margin: 12,
@@ -65,19 +64,21 @@ export default class App extends Component {
               <div>
               <AppBar title="" onLeftIconButtonTouchTap={this.handleToggle} style={{backgroundColor: '#', width: '2%'}} />
 
+
                 <Drawer containerStyle={{height: 'calc(100% - 64px)', top: 64}} docked={false} width={200} open={this.state.open} zDepth={2} open={this.state.open} onRequestChange={(open) => this.setState({open})}>
-                  <a href="#sectionOne"><RaisedButton label="Section One" primary={true} style={buttonStyle} onClick={this.handleClose}/></a>
-                  <a href="#sectionTwo"><RaisedButton label="Section Two" primary={true} style={buttonStyle} onClick={this.handleClose}/></a>
-                  <a href="#sectionThree"><RaisedButton label="Section Three" primary={true} style={buttonStyle} onClick={this.handleClose}/></a>
-                  <AccountsWrapper />
+                    <ListExampleSimple />
+
+
+        {/*       <a href="#sectionOne"><RaisedButton label="Home" primary={true} style={buttonStyle} onClick={this.handleClose}/></a>
+                  <a href="#sectionTwo"><RaisedButton label="Resume" primary={true} style={buttonStyle} onClick={this.handleClose}/></a>
+                  <a href="#sectionThree"><RaisedButton label="Projects" primary={true} style={buttonStyle} onClick={this.handleClose}/></a>
+                   */}
                 </Drawer>
               </div>
             </Router>
           </Header>
           <Footer>
-            <a href="" className="opa">Dcoumentation</a>
-            <a href="">Example Source</a>
-            <a href="">About</a>
+            <SocialMenu />
           </Footer>
           <SectionsContainer {...options}>
             <Section><Page1 /></Section>

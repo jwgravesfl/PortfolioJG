@@ -1,12 +1,27 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
-// import Background from './images/CypressSunset.jpg';
+import styled, { keyframes } from 'styled-components';
+// import Page1Top from './Page1Top';
+import EntranceAnimation from './Page1Full';
 
-var sectionStyle = {
+const sectionStyle = {
   width: "100%",
   height: "100%",
   backgroundColor: 'black',
-  background: 'url(https://www.cowboydr.com/images/testImages/skywayPierHorizon.jpg) center / cover'
+//  background: 'url(https://www.cowboydr.com/images/testImages/skywayPierHorizon.jpg) center / cover'
+};
+
+var topStyle = {
+  width: "100%",
+  height: "30%",
+  backgroundColor: "",
+  textAlign: "center",
+};
+
+const bottomStyle = {
+  width: "100%",
+  height: "30%",
+  backgroundColor: "",
+  textAlign: "center",
 };
 
 const buttonStyle = {
@@ -17,9 +32,7 @@ export default class Page1 extends Component {
   render(){
     return (
       <div style={ sectionStyle }>
-        <section>
-        <Button bsStyle='success' style={ buttonStyle }>Page 1</Button>
-      </section>
+          <EntranceAnimation />
       </div>
 
     )
